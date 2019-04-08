@@ -4,7 +4,7 @@ const fragment = document.createDocumentFragment();
 const search = document.querySelector(".search");
 const searchForm = document.querySelector(".search-form");
 const plusUrl = 'https://image.tmdb.org/t/p/w600_and_h900_bestv2';
-
+let searchListMovies;
 
 async function getDataTrend() {
     try {
@@ -40,8 +40,8 @@ async function getRecomendMovie(id) {
 async function createList() {
     let listFilms = await getDataTrend();
     console.log(listFilms);
-    if(typeof window.searchListMovies !== "undefined" ){
-        window.searchListMovies.results.map(item =>{
+    if(typeof searchListMovies !== "undefined" ){
+        searchListMovies.results.map(item =>{
             const listItem = listTemplete.cloneNode(true);
             listItem.querySelector(".movie-stats").setAttribute("data-id", item.id);
             listItem.querySelector(".list a").textContent = item.title;
@@ -76,7 +76,10 @@ async function showInformation() {
 async function changeInput(e) {
     e.preventDefault();
     const eTarget = e.target.value;
-    window.searchListMovies = await getSearchdMovies(eTarget);
+    if (eTarget === ""){
+        return
+    }
+    searchListMovies = await getSearchdMovies(eTarget);
 }
 
 showInformation();
@@ -99,12 +102,6 @@ async function handleList (evt) {
     currentItem.querySelector(".list").classList.add('hidden');
 }
 
-
-function sendFormEnter(e) {
-    if(e.keyCode === 13){
-        handleForm();
-    }
-}
 function handleForm(e) {
     e.preventDefault();
     listItems.innerHTML = "";
@@ -112,7 +109,7 @@ function handleForm(e) {
 }
 search.addEventListener("change", changeInput);
 searchForm.addEventListener("submit", handleForm);
-document.addEventListener("keydown", sendFormEnter);
+
 
 
 
