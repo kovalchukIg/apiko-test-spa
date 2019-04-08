@@ -1,0 +1,83 @@
+li {
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: beige;
+}
+
+
+img {
+    display: block;
+    margin: 0 auto;
+}
+
+
+body{
+    text-align: center;
+    background: linear-gradient(90deg, #5041b2 0%, #7969c6 100%);
+
+}
+
+input{
+    font-family: 'Consolas', Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    color: #757575;
+    padding: .5em;
+    border-radius: 2px;
+    border: 1px solid lightgray;
+    outline: none;
+    width: 50%;
+    margin: 10px -11px 10px 10px;
+}
+
+button {
+    border: 1px solid lightgray;
+    border-radius: 2px;
+    color: #757575;
+    position: relative;
+    height: 37px;
+    margin: -3px 0 0 5px;
+    padding: 0 16px;
+    display: inline-block;
+    font-family: "Consolas","Helvetica","Arial",sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    line-height: 36px;
+    vertical-align: middle;
+    background-color: #fff;
+}
+
+.item{
+    color: #ffffff;
+    font-size: 20px;
+}
+
+button:hover{
+    background-color: whitesmoke;
+}
+
+.list a {
+    font-size: 25px;
+}
+.list:hover{
+    background-color: #7969c6;
+}
+
+.hidden{
+    display: none;
+}
+
+.list-items{
+    text-align: center;
+}
+
+
+.movie-stats ul{
+    margin: 5px;
+}
